@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux System Dashboard</title>
+
+    <meta http-equiv="refresh" content="5">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Linux System Dashboard 🚀</h1>
+     <p>Welcome to my first cloud project.</p>
+
+    <div class="Dashboard">
+        <div class="card">
+        <h2>Hostname</h2>
+        <p>{{hostname}}</p>
+        </div>
+    <div class="card">
+        <h2>User</h2>
+        <p>{{username}}</p>
+    </div>
+    <div class="card">
+        <h2>CPU Usage</h2>
+         <p>{{cpu_usage}}%</p>
+    </div>
+    <div class="card">
+        <h2>RAM Usage</h2>
+        <p>{{ram_usage}}%</p>   
+    </div>
+
+    <div class="card">
+    <h2>Disk Usage</h2>
+    <p>{{ disk_usage }}%</p>
+           </div>
+</div>
+
+
+</body>
+</html>
