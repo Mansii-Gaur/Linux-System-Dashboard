@@ -2,6 +2,11 @@
 
 A Flask-based Linux monitoring dashboard deployed on AWS EC2.
 
+## Dashboard Preview
+
+![Dashboard Screenshot](images/dashboard.png)
+
+
 ## Features
 
 * Display Hostname
