@@ -1,114 +1,164 @@
 # Linux System Dashboard 🚀
 
-A Flask-based Linux monitoring dashboard deployed on AWS EC2.
-
 ## Dashboard Preview
 
 ![Dashboard Screenshot](images/dashboard.png)
 
+## About the Project
+
+This is my first cloud deployment project.
+
+I built this Linux System Dashboard using Flask and Python to display some basic system information such as hostname, current user, CPU usage, RAM usage, and disk usage.
+
+Initially, the project was running only on my local machine, but later I deployed it on AWS EC2 and configured it with Gunicorn, Nginx, a custom DuckDNS domain, and HTTPS using Let's Encrypt SSL certificates.
+
+Working on this project helped me understand how a web application is actually deployed and made accessible over the internet.
+
+---
 
 ## Features
 
-* Display Hostname
-* Display Logged-in User
-* Monitor CPU Usage
-* Monitor RAM Usage
-* Monitor Disk Usage
-* Auto Refresh Dashboard
-* AWS EC2 Deployment
-* Nginx Reverse Proxy
-* Gunicorn Application Server
+* Displays hostname of the Linux machine
+* Shows currently logged-in user
+* Displays CPU usage
+* Displays RAM usage
+* Displays disk usage
+* Responsive dashboard interface
+* Hosted on AWS EC2
+* Accessible through a custom domain
+* Secured with HTTPS
 
-## Tech Stack
+---
+
+## Technologies Used
+
+### Backend
 
 * Python
 * Flask
+
+### Frontend
+
 * HTML
 * CSS
+
+### System Monitoring
+
 * psutil
-* Git & GitHub
+
+### Deployment
+
 * AWS EC2
 * Gunicorn
 * Nginx
+* Systemd
 
-## Project Architecture
+### Networking & Security
 
-User Browser
+* DuckDNS
+* Let's Encrypt SSL
+* HTTPS
 
-↓
+### Version Control
 
-Nginx
+* Git
+* GitHub
 
-↓
+---
 
-Gunicorn
+## How the Dashboard Works
 
-↓
+The application collects system information from the Linux server and displays it on a web page.
 
-Flask Application
+### Hostname
 
-↓
+The hostname identifies the machine on which the application is running.
 
-psutil
+### User
 
-↓
+The dashboard displays the currently logged-in Linux user.
 
-Linux System Metrics
+### CPU Usage
 
-## Dashboard Metrics
+CPU utilization is collected using the psutil library.
 
-* Hostname
-* Current User
-* CPU Usage (%)
-* RAM Usage (%)
-* Disk Usage (%)
+### RAM Usage
 
-## Installation
+The dashboard calculates the percentage of memory currently being used.
 
-Clone the repository:
+### Disk Usage
 
-git clone https://github.com/Mansii-Gaur/Linux-System-Dashboard.git
+The dashboard displays the percentage of storage currently occupied on the server.
 
-Move into project directory:
+---
 
-cd Linux-System-Dashboard
+## Deployment Process
 
-Create virtual environment:
+I followed the following steps to deploy this project:
 
-python3 -m venv venv
+1. Built the Flask application locally.
+2. Uploaded the source code to GitHub.
+3. Created an Ubuntu EC2 instance on AWS.
+4. Connected to the server using SSH.
+5. Installed Python and project dependencies.
+6. Created a virtual environment.
+7. Ran the application using Gunicorn.
+8. Configured Nginx as a reverse proxy.
+9. Created a systemd service so the application starts automatically.
+10. Connected a DuckDNS domain to the EC2 instance.
+11. Generated SSL certificates using Let's Encrypt.
+12. Enabled HTTPS for secure access.
 
-Activate virtual environment:
+---
 
-source venv/bin/activate
+## Challenges I Faced
 
-Install dependencies:
+While deploying the project, I ran into several issues and learned a lot by fixing them.
 
-pip install -r requirements.txt
+Some of the problems included:
 
-Run application:
+* SSH authentication errors
+* Missing Python packages
+* Gunicorn service conflicts
+* Nginx configuration issues
+* SSL certificate installation errors
+* HTTPS port configuration in AWS Security Groups
 
-python3 app.py
+Troubleshooting these issues helped me understand how cloud deployment works in a real environment.
 
-## AWS Deployment
+---
 
-This project is deployed on AWS EC2 using:
+## Live Demo
 
-* Ubuntu Server
-* Security Groups
-* SSH Access
-* Gunicorn
-* Nginx Reverse Proxy
+https://linux-system-dashboard.duckdns.org
+
+---
 
 ## Future Improvements
 
-* HTTPS with SSL Certificate
-* Custom Domain
-* Docker Containerization
-* CI/CD Pipeline
-* Monitoring & Logging
+Some features I would like to add in the future:
 
-## Author
+* Auto-refreshing metrics
+* CPU and RAM usage graphs
+* Historical monitoring data
+* Docker-based deployment
+* AWS CloudWatch integration
+* User authentication
 
-Mansi Gaur
+---
 
-GitHub: https://github.com/Mansii-Gaur
+## What I Learned
+
+This project helped me understand:
+
+* Flask application deployment
+* AWS EC2 basics
+* Linux server management
+* SSH connectivity
+* Nginx reverse proxy configuration
+* Gunicorn application server
+* Domain and DNS configuration
+* HTTPS and SSL certificates
+* Git and GitHub workflow
+
+This project was a great learning experience and gave me practical exposure to cloud deployment and web application hosting.
